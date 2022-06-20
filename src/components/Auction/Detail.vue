@@ -20,7 +20,7 @@ export default {
         async getAuctionDetail(id){
 
             try {
-                const {data} = axios.get("");
+                const {data} = axios.get(`${id}`);
                 console.log(data);
             } catch (error) {
                 console.log(error);

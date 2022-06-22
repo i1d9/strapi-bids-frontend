@@ -15,6 +15,7 @@ const dataStore = {
             state.auth = user
         },
         logOut(state) {
+
             state.auth = null
         }
     },
@@ -48,12 +49,15 @@ const dataStore = {
 
 
 
+
             await commit('setUser', { ...data.user, token: data.jwt });
 
 
         }, async LogOut({ commit }) {
             let user = null
-            commit('logout', user);
+
+            
+            commit('logOut', user);
         }
     }
 }

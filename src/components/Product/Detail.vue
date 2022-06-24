@@ -70,11 +70,7 @@
 
 
 <script>
-import axios from 'axios';
-
 import socketIOClient from "socket.io-client";
-
-
 export default {
 
     name: "ProductDetail",
@@ -110,20 +106,6 @@ export default {
 
             return `${days} Days ${hours} hrs ${minutes} minutes ${seconds} seconds`
         },
-        getAccount(account) {
-            console.log(account);
-        },
-        async getproduct(id) {
-            try {
-                const response = await axios.get(`http://localhost:1337/api/products/${id}?populate=*`);
-
-                this.product = response.data.data.attributes;
-
-
-            } catch (error) {
-                console.log(error);
-            }
-        },
         makeBid() {
 
 
@@ -141,8 +123,6 @@ export default {
         this.socket.on("loadBids", (data) => {
             this.product = data;
             this.bids = data.bids;
-            console.log(this.product);
-
         });
 
 

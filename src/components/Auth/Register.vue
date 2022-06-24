@@ -10,7 +10,6 @@
             <div class="mb-3">
                 <input type="email" class="form-control" placeholder="Email Address" name="email"
                     v-model="form.email" />
-
             </div>
 
             <div class="mb-3">
@@ -27,15 +26,11 @@
             </router-link>
         </form>
 
-
         <p v-if="showError" id="error">Could not create an account with the details provided</p>
     </div>
 </template>
 
 <script>
-
-
-
 import { mapActions } from "vuex";
 
 export default {
@@ -53,9 +48,6 @@ export default {
     methods: {
         ...mapActions(["Register"]),
         async submit() {
-
-
-
             try {
                 await this.Register({
                     username: this.form.username,
@@ -73,5 +65,4 @@ export default {
 
     }
 }
-
 </script>
